@@ -1,0 +1,12 @@
+index a4f71076cacb..05a312797191 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@
+ VERSION = 6
+ PATCHLEVEL = 0
+ SUBLEVEL = 0
+-EXTRAVERSION = -rc4
++EXTRAVERSION = -rc4-thor_kernel
+ NAME = Hurr durr I'ma ninja sloth
+
+ # *DOCUMENTATION*
