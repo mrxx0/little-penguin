@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="usb", RUN+="/sbin/insmod /root/assignment_04/usb_keyboard_module.ko"
+ACTION=="remove", SUBSYSTEM=="usb", RUN+="/sbin/rmmod usb_keyboard_module"
