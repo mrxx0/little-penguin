@@ -1,0 +1,29 @@
+-bash-5.1# insmod misc_char_driver.ko && dmesg | tail -1 && ls /dev
+[ 5706.805368] misc_char_driver : Driver [fortytwo] registered with success !
+autofs		 fortytwo  loop4	 random    snd	   tty14  tty25  tty36	tty47  tty58  ttyS2    vcs6   vcsu4
+block		 full	   loop5	 rfkill    sr0	   tty15  tty26  tty37	tty48  tty59  ttyS3    vcsa   vcsu5
+bsg		 hidraw0   loop6	 rtc	   stderr  tty16  tty27  tty38	tty49  tty6   urandom  vcsa1  vcsu6
+bus		 hpet	   loop7	 rtc0	   stdin   tty17  tty28  tty39	tty5   tty60  usbmon0  vcsa2  vga_arbiter
+cdrom		 hwrng	   loop-control  sda	   stdout  tty18  tty29  tty4	tty50  tty61  usbmon1  vcsa3  zero
+char		 input	   mapper	 sda1	   tty	   tty19  tty3	 tty40	tty51  tty62  usbmon2  vcsa4
+console		 kmsg	   mem		 sda2	   tty0    tty2   tty30  tty41	tty52  tty63  vcs      vcsa5
+core		 log	   null		 sda3	   tty1    tty20  tty31  tty42	tty53  tty7   vcs1     vcsa6
+cpu		 loop0	   nvram	 sg0	   tty10   tty21  tty32  tty43	tty54  tty8   vcs2     vcsu
+cpu_dma_latency  loop1	   port		 sg1	   tty11   tty22  tty33  tty44	tty55  tty9   vcs3     vcsu1
+disk		 loop2	   ptmx		 shm	   tty12   tty23  tty34  tty45	tty56  ttyS0  vcs4     vcsu2
+fd		 loop3	   pts		 snapshot  tty13   tty24  tty35  tty46	tty57  ttyS1  vcs5     vcsu3
+
+-bash-5.1# rmmod misc_char_driver.ko && dmesg | tail -1 && ls /dev
+[ 5739.626935] misc_char_driver : Driver [fortytwo] deregistered with success !
+autofs		 fd	  loop3		ptmx	sg1	  tty10  tty20	tty30  tty40  tty50  tty60  urandom  vcsa   vcsu4
+block		 full	  loop4		pts	shm	  tty11  tty21	tty31  tty41  tty51  tty61  usbmon0  vcsa1  vcsu5
+bsg		 hidraw0  loop5		random	snapshot  tty12  tty22	tty32  tty42  tty52  tty62  usbmon1  vcsa2  vcsu6
+bus		 hpet	  loop6		rfkill	snd	  tty13  tty23	tty33  tty43  tty53  tty63  usbmon2  vcsa3  vga_arbiter
+cdrom		 hwrng	  loop7		rtc	sr0	  tty14  tty24	tty34  tty44  tty54  tty7   vcs      vcsa4  zero
+char		 input	  loop-control	rtc0	stderr	  tty15  tty25	tty35  tty45  tty55  tty8   vcs1     vcsa5
+console		 kmsg	  mapper	sda	stdin	  tty16  tty26	tty36  tty46  tty56  tty9   vcs2     vcsa6
+core		 log	  mem		sda1	stdout	  tty17  tty27	tty37  tty47  tty57  ttyS0  vcs3     vcsu
+cpu		 loop0	  null		sda2	tty	  tty18  tty28	tty38  tty48  tty58  ttyS1  vcs4     vcsu1
+cpu_dma_latency  loop1	  nvram		sda3	tty0	  tty19  tty29	tty39  tty49  tty59  ttyS2  vcs5     vcsu2
+disk		 loop2	  port		sg0	tty1	  tty2	 tty3	tty4   tty5   tty6   ttyS3  vcs6     vcsu3
+-bash-5.1#
