@@ -26,11 +26,13 @@ static ssize_t mymounts_list(struct file *file, char __user *str, size_t len, lo
 	list_for_each_entry(mnt, &mnt_ns->list, mnt_list) {
 		mnt_path.mnt = &mnt->mnt;
 		mnt_path.dentry = mnt->mnt.mnt_root;
+		if (mnt->mnt_id != 1) { // source : https://lwn.net/Articles/265920/
 		path = d_path(&mnt_path, path_list, PATH_MAX);
 		//pr_info("%s", mnt->mnt_devname);
 		pr_info("%-10s%s\n",mnt->mnt_devname, path);
 		if (IS_ERR(path))
 			return -1;
+		}
 	//	pr_info("%s\n", path);
 	}
 	kfree(path);
