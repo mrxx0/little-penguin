@@ -1,10 +1,10 @@
-[ 6018.026745] usb 1-2: new low-speed USB device number 43 using xhci_hcd
-[ 6018.911265] usb 1-2: New USB device found, idVendor=413c, idProduct=2113, bcdDevice= 1.08
-[ 6018.911513] usb 1-2: New USB device strings: Mfr=0, Product=2, SerialNumber=0
-[ 6018.911702] usb 1-2: Product: Dell KB216 Wired Keyboard
-[ 6018.925563] input: Dell KB216 Wired Keyboard as /devices/pci0000:00/0000:00:0c.0/usb1/1-2/1-2:1.0/0003:413C:2113.004C/input/input118
-[ 6019.005581] hid-generic 0003:413C:2113.004C: input,hidraw1: USB HID v1.11 Keyboard [Dell KB216 Wired Keyboard] on usb-0000:00:0c.0-2/input0
-[ 6019.023492] input: Dell KB216 Wired Keyboard System Control as /devices/pci0000:00/0000:00:0c.0/usb1/1-2/1-2:1.1/0003:413C:2113.004D/input/input119
-[ 6019.075537] input: Dell KB216 Wired Keyboard Consumer Control as /devices/pci0000:00/0000:00:0c.0/usb1/1-2/1-2:1.1/0003:413C:2113.004D/input/input120
-[ 6019.076039] hid-generic 0003:413C:2113.004D: input,hidraw2: USB HID v1.11 Device [Dell KB216 Wired Keyboard] on usb-0000:00:0c.0-2/input1
-[ 6019.077483] usb_keyboard_module : USB keyboard connected !
+[  +6.256153] usb 1-2: new low-speed USB device number 33 using xhci_hcd
+[  +0.752642] usb 1-2: New USB device found, idVendor=413c, idProduct=2113, bcdDevice= 1.08
+[  +0.000259] usb 1-2: New USB device strings: Mfr=0, Product=2, SerialNumber=0
+[  +0.000198] usb 1-2: Product: Dell KB216 Wired Keyboard
+[  +0.013685] input: Dell KB216 Wired Keyboard as /devices/pci0000:00/0000:00:0c.0/usb1/1-2/1-2:1.0/0003:413C:2113.003E/input/input97
+[  +0.126260] hid-generic 0003:413C:2113.003E: input,hidraw1: USB HID v1.11 Keyboard [Dell KB216 Wired Keyboard] on usb-0000:00:0c.0-2/input0
+[  +0.019810] input: Dell KB216 Wired Keyboard System Control as /devices/pci0000:00/0000:00:0c.0/usb1/1-2/1-2:1.1/0003:413C:2113.003F/input/input98
+[  +0.067666] input: Dell KB216 Wired Keyboard Consumer Control as /devices/pci0000:00/0000:00:0c.0/usb1/1-2/1-2:1.1/0003:413C:2113.003F/input/input99
+[  +0.000672] hid-generic 0003:413C:2113.003F: input,hidraw2: USB HID v1.11 Device [Dell KB216 Wired Keyboard] on usb-0000:00:0c.0-2/input1
+[  +0.002555] usb_keyboard_module : USB keyboard connected !
