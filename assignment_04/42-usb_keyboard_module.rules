@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{bInterfaceSubClass}=="01", ATTRS{bInterfaceClass}=="03", RUN+="/usr/sbin/insmod /root/test/assignment_04/usb_keyboard_module.ko"
