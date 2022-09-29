@@ -21,8 +21,8 @@ static void get_size(struct mnt_namespace *mnt_ns, int *size)
 	maxlen = 0;
 	len = 0;
 	path = NULL;
-	list_for_each_entry(mnt, &mnt_ns->list, mnt_list){
-		if (mnt->mnt_id != 1){
+	list_for_each_entry(mnt, &mnt_ns->list, mnt_list) {
+		if (mnt->mnt_id != 1) {
 			len = strlen(mnt->mnt_devname);
 			if (len > maxlen)
 				maxlen = len;
@@ -56,12 +56,12 @@ static ssize_t mymounts_list(struct file *file, char __user *str, size_t len, lo
 	// needed in case a mnt_devname is too long
 	get_size(mnt_ns, size);
 	output = kmalloc(size[0], GFP_KERNEL);
-	if (output == NULL)
+	if (!output)
 		return -ENOMEM;
 	memset(path_list, 0, sizeof(char) * PATH_MAX);
 	memset(output, 0, size[0]);
 	list_for_each_entry(mnt, &mnt_ns->list, mnt_list) {
-			if (mnt->mnt_id != 1) {
+		if (mnt->mnt_id != 1) {
 			mnt_path.mnt = &mnt->mnt;
 			mnt_path.dentry = mnt->mnt.mnt_root;
 			path = d_path(&mnt_path, path_list, PATH_MAX);
@@ -69,10 +69,11 @@ static ssize_t mymounts_list(struct file *file, char __user *str, size_t len, lo
 				kfree(output);
 				return -1;
 			}
-			cursor += sprintf(output + cursor, "%-*s%s\n",size[1], mnt->mnt_devname, path);
+			cursor += sprintf(output + cursor, "%-*s%s\n", size[1],
+					mnt->mnt_devname, path);
 		}
 	}
-	ret = simple_read_from_buffer(str, len, offset, output, size[0]) ;
+	ret = simple_read_from_buffer(str, len, offset, output, size[0]);
 	kfree(output);
 	return ret;
 }
@@ -84,7 +85,7 @@ static const struct proc_ops mymounts_procops = {
 static int __init init_mymounts(void)
 {
 	mymounts = proc_create("mymounts", 0444, NULL, &mymounts_procops);
-	if (mymounts == NULL){
+	if (!mymounts) {
 		pr_err("Error while creating file.\n");
 		return -1;
 	}
