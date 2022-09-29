@@ -43,15 +43,9 @@ static ssize_t jiffies_read(struct file *file, char __user *str, size_t len, lof
 	return simple_read_from_buffer(str, len, offset, tmp, size);
 }
 
-static ssize_t jiffies_write(struct file *file, const char __user *str, size_t len, loff_t *offset)
-{
-	return len;
-}
-
 static struct file_operations jiffies_fops = {
 	.owner = THIS_MODULE,
-	.read = jiffies_read,
-	.write = jiffies_write
+	.read = jiffies_read
 };
 
 DEFINE_MUTEX(foo_mutex);
