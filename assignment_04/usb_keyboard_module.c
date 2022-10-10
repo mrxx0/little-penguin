@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0
 #include <linux/module.h>
 #include <linux/kernel.h>
-#include <linux/usb.h>
-#include <linux/hid.h>
 
 static int __init usb_init_module(void)
 {
